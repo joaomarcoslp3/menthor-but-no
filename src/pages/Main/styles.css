@@ -56,6 +56,10 @@ input::placeholder {
   color: #dde4e8;
   padding-left: 0px;
 }
+.reference-text {
+  display: 'flex'; 
+  flex-direction: 'row';
+}
 button {
   margin-top: 30px;
   width: 20%;
@@ -74,13 +78,6 @@ input:focus, button:focus{
   border-color: #37509B;
   outline: none;
 }
-.copiedButton {
-  background-color: #00B09B;
-  border-color: #00B09B;
-}
-.copiedButton:hover {
-  background-color: #00B09B;
-}
 .gMQbUq {
   text-align: center;
   cursor: pointer;
@@ -98,4 +95,19 @@ input:focus, button:focus{
 }
 .icon {
   padding-bottom: 5px
+}
+
+
+@media screen and (max-width: 600px) {
+  .input-group-1  {
+    display: flex;
+    flex-direction: column;
+  }
+  button {
+    width: 100%;
+  }
+  p {
+    display: inline;
+    max-width: 90%;
+  }
 }

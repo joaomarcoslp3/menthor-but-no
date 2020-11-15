@@ -17,7 +17,6 @@ export default function Main() {
   const [date, setDate] = useState('');
   const [visibleDate, setVisibleDate] = useState('30 dez. 2005');
   const [dateType, setDateType] = useState('text');
-  const [copyButtonVisible, setCopyButtonVisible] = useState('false');
   const [copyButtonText, setCopyButtonText] = useState('Copiar');
 
   function createReference() {
@@ -27,7 +26,6 @@ export default function Main() {
     setVisibleName(name.toUpperCase());
     setVisibleTitle(title);
     setVisibleDate(formatedDate);
-    setCopyButtonVisible(true);
   }
 
   function changeButtonText() {
@@ -96,20 +94,18 @@ export default function Main() {
           <button onClick={createReference}>Criar Referência</button>
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'row' }} id="reference">
+        <div style={{display: 'flex', flexDirection: 'row'}}>
           <p>{visibleName}. &nbsp;</p>
           <p style={{ fontWeight: 'bold' }}>{visibleTitle}. &nbsp;</p>
           <p>Disponível em: {visibleURL}. Acesso em: {visibleDate}</p>
-          {copyButtonVisible ? (
-            <CopyToClipboard text={`${visibleName}. ${visibleTitle}. Disponível em: ${visibleURL}. Acesso em: ${visibleDate}`}
-              onCopy={changeButtonText}
-            >
-              <div class="sc-kEYyzF gMQbUq">
-                <FiClipboard size={30} className="icon" />
-                <span class="sc-kkGfuU bwNpfS">{copyButtonText}</span>
-              </div>
-            </CopyToClipboard>
-          ) : <></>}
+          <CopyToClipboard text={`${visibleName}. ${visibleTitle}. Disponível em: ${visibleURL}. Acesso em: ${visibleDate}`}
+            onCopy={changeButtonText}
+          >
+            <div className="sc-kEYyzF gMQbUq">
+              <FiClipboard size={30} className="icon" />
+              <span class="sc-kkGfuU bwNpfS">{copyButtonText}</span>
+            </div>
+          </CopyToClipboard>
         </div>
 
       </div>

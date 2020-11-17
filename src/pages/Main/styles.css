@@ -123,4 +123,10 @@ p {
   button {
     width: 100%;
   }
+  .icon {
+    margin-top: 10px;
+  }
+  .reference {
+    word-break: break-all;
+  }
 }

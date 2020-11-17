@@ -95,9 +95,11 @@ export default function Main() {
         </div>
 
         <div style={{display: 'flex', flexDirection: 'row'}}>
-          <p>{visibleName}. &nbsp;</p>
-          <p style={{ fontWeight: 'bold' }}>{visibleTitle}. &nbsp;</p>
-          <p>Disponível em: {visibleURL}. Acesso em: {visibleDate}</p>
+          <p className="reference">
+            {visibleName}. &nbsp;
+            <b>{visibleTitle}. &nbsp;</b>
+            Disponível em: {visibleURL}. Acesso em: {visibleDate}
+          </p>
           <CopyToClipboard text={`${visibleName}. ${visibleTitle}. Disponível em: ${visibleURL}. Acesso em: ${visibleDate}`}
             onCopy={changeButtonText}
           >

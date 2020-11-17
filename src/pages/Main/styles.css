@@ -113,6 +113,7 @@ p {
   margin-block-end: 1em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
+  word-break: break-all;
 }
 
 @media screen and (max-width: 600px) {
@@ -125,8 +126,5 @@ p {
   }
   .icon {
     margin-top: 10px;
-  }
-  .reference {
-    word-break: break-all;
   }
 }
